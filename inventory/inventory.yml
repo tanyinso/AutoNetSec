@@ -1,0 +1,76 @@
+---
+autonetsec:
+  children:
+
+    router:
+      hosts:
+        edge-router:
+          ansible_host: 10.0.0.1
+
+    switches:
+      children:
+        l2-switch:
+          hosts:
+            fin-sw:
+              ansible_host: 10.20.30.10
+            hr-sw:
+              ansible_host: 10.20.30.11
+            dmz-sw:
+              ansible_host: 10.30.30.2
+            server-sw:
+              ansible_host: 10.40.40.2
+
+        l3-switch:
+          children:
+            core-sw:
+              hosts:
+                core-switch:
+                  ansible_host: 10.20.20.1
+
+            dist-sw:
+              hosts:
+                dist-sw1:
+                  ansible_host: 10.20.20.2
+                dist-sw2:
+                  ansible_host: 10.20.20.3
+
+    firewall:
+      children:
+        security-gateway:
+          hosts:
+            cpsg-fw1:
+              ansible_host: 10.0.0.2
+              interfaces:
+                eth0: 10.40.40.1   # Server Network
+                eth1: 10.0.0.2     # Internet
+                eth2: 10.30.30.1   # DMZ
+                eth3: 10.20.20.1   # Internal
+
+        management-server:
+          hosts:
+            cpsms:
+              ansible_host: 10.40.40.12
+
+    dmz:
+      children:
+        web:
+          hosts:
+            nginx-webserver:
+              ansible_host: 10.30.30.12
+        dns:
+          hosts:
+            dns-server:
+              ansible_host: 10.30.30.10
+        mail:
+          hosts:
+            mail-server:
+              ansible_host: 10.30.30.11
+
+    server:
+      hosts:
+        ansible-node:
+          ansible_host: 10.40.40.10
+        admin-pc:
+          ansible_host: 10.40.40.11
+        windows-server:
+          ansible_host: 10.40.40.13
