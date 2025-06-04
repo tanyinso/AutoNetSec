@@ -1,0 +1,4 @@
+ansible_host: 10.40.40.10
+hostname: dns-server
+device_type: dns
+

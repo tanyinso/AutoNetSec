@@ -1,0 +1,3 @@
+ansible_host: 10.30.30.3
+hostname: dist-sw2
+device_type: l3-switch

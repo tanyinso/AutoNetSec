@@ -1,0 +1,5 @@
+{% for vlan_id, data in svis.items() %}
+interface Vlan{{ vlan_id }}
+ip address {{ data.ip }} {{ data.mask }}
+no shutdown
+{% endfor %}

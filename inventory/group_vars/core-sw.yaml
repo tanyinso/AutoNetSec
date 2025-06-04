@@ -1,0 +1,5 @@
+
+
+ansible_host: 10.30.30.1
+hostname: core-sw
+device_type: l3-switch

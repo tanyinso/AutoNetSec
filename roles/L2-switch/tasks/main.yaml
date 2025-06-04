@@ -1,0 +1,4 @@
+- name: Apply basic L2 switch configuration
+ios_config:
+src: basic_config.j2
+- include_tasks: vlans.yaml

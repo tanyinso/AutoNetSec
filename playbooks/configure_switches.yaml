@@ -1,0 +1,11 @@
+---
+
+- name: Configure all switches
+  hosts: switches
+  gather_facts: no
+  roles:
+    -  role: L2-switch
+       when: "'access' in group_names"
+    -  role: L3-switch
+       when: " 'core' in group_names or 'distribution' in group_names"
+

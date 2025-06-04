@@ -1,0 +1,8 @@
+{% for vlan_id, name in vlans_common.items() %}
+vlan {{ vlan_id }}
+name {{ name }}
+{% endfor %}
+{% for vlan_id, name in vlans_dynamic.items() %}
+vlan {{ vlan_id }}
+name {{ name }}
+{% endfor %}

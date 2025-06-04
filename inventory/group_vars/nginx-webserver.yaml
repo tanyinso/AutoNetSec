@@ -1,0 +1,3 @@
+ansible_host: 10.40.40.30
+hostname: nginx-webserver
+device_type: web

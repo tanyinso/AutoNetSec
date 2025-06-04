@@ -1,0 +1,5 @@
+- name: Configure router hostname
+ios_config:
+lines:
+- hostname {{ inventory_hostname }}
+- include_tasks: routing.yam

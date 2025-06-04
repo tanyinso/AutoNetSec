@@ -1,0 +1,8 @@
+ansible_host: 10.20.20.13
+hostname: cpsg-fw1
+interfaces:
+  eth0: 10.20.20.13
+  eth1: 10.20.20.2
+  eth2: 10.20.20.5
+  eth3: 10.20.20.9
+device_type: security-gateway

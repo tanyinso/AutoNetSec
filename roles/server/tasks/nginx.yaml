@@ -1,0 +1,17 @@
+---
+
+- name: Install NGINX web server
+  become: true
+  ansible.builtin.apt:
+    name: nginx
+    state: present
+- name: Copy website configuration
+  become: true
+  template:
+    src: nginx.conf.j2
+    dest: /etc/nginx/sites-available/default
+- name: Ensure NGINX is running
+  ansible.builtin.service:
+    name: nginx
+    state: started
+    enabled: true

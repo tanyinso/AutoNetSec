@@ -1,0 +1,4 @@
+- name: Push firewall policy
+  command: mgmt_cli publish --format json
+  delegate_to: localhost
+- include_tasks: policy.yam

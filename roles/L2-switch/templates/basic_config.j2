@@ -1,0 +1,7 @@
+ostname {{ hostname }}
+ip domain-name {{ domain_name }}
+username {{ creds.username }} privilege {{ creds.privilege }} secret {{ creds.password }}
+enable secret {{ creds.enable_secret }}
+line con 0
+password {{ creds.console_password }}
+login

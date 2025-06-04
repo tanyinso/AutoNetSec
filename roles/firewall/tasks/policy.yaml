@@ -1,0 +1,6 @@
+- name: Configure firewall policy
+  command: >
+  mgmt_cli add access-rule layer "Network" position 1
+  name "Allow_Internal" action Accept source "Internal" destination "Any"
+  service "Any" --format json -r true
+  delegate_to: localhost

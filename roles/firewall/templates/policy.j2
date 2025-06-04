@@ -1,0 +1,21 @@
+{
+"layer": "Network",
+"rules": [
+{
+"position": 1,
+"name": "Allow_Internal",
+"action": "Accept",
+"source": "{{ internal_sources | default('Internal') }}",
+"destination": "Any",
+"service": "Any"
+},
+{
+"position": 2,
+"name": "Allow_DMZ_to_Internet",
+"action": "Accept",
+"source": "DMZ",
+"destination": "Internet",
+"service": "Any"
+}
+]
+}

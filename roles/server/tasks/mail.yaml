@@ -1,0 +1,10 @@
+- name: Install Postfix mail server
+  become: true
+  ansible.builtin.apt:
+    name: postfix
+    state: present
+- name: Ensure Postfix is running
+  ansible.builtin.service:
+    name: postfix
+    state: started
+    enabled: true
